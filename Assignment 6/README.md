@@ -6,4 +6,4 @@
     * Python File Handling: Read, Write, Create and Delete
     * Working with directories
 
-2. Builtin function of python.
+2. Builtin function of python. You can check them here: https://www.w3schools.com/python/python_ref_functions.asp.
