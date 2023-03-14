@@ -1,9 +1,9 @@
 import pygame
-
 pygame.init()
+
 W, H = 600, 400
 
-sc = pygame.display.set_mode((W, H))
+sc = pygame.display.set_mode((W, H), pygame.RESIZABLE)
 
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
@@ -31,6 +31,7 @@ while True:
         elif event.type == pygame.KEYUP:
             if event.key in [pygame.K_LEFT, pygame.K_RIGHT]:
                 fLeft = fRight = False
+    
     
     if fLeft:
         x -= speed
