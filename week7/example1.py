@@ -26,8 +26,6 @@ while True:
     if ballrect.top < 0 or ballrect.bottom > HEIGHT:
         speed[1] = -speed[1]
         
-    
-        
     screen.fill(BLACK)
     screen.blit(ball, ballrect)
-    # pygame.display.update()
+    pygame.display.update()

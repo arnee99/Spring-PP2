@@ -17,7 +17,7 @@ speed = 5
 # FPS = 60
 # clock = pygame.time.Clock()
 
-fLeft = fRight = False
+fLeft = fRight = fUp = fDown = False
 
 while True:
     for event in pygame.event.get():
@@ -25,18 +25,32 @@ while True:
             exit()
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
+                # x -= speed
                 fLeft = True
             elif event.key == pygame.K_RIGHT:
+                # x += speed
                 fRight = True
+            elif event.key == pygame.K_UP:
+                # y -= speed
+                fUp = True
+            elif event.key == pygame.K_DOWN:
+                # y += speed
+                fDown = True
+                            
         elif event.type == pygame.KEYUP:
-            if event.key in [pygame.K_LEFT, pygame.K_RIGHT]:
-                fLeft = fRight = False
+            if event.key in [pygame.K_LEFT, pygame.K_RIGHT, 
+                             pygame.K_UP, pygame.K_DOWN]:
+                fLeft = fRight = fUp = fDown = False
     
     
     if fLeft:
         x -= speed
     if fRight:
         x += speed
+    if fUp:
+        y -= speed
+    if fDown:
+        y += speed
         
     sc.fill(WHITE)
     pygame.draw.rect(sc, BLUE, (x, y, 10, 20))
